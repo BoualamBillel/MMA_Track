@@ -1,0 +1,75 @@
+.organization-filter {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.organization-filter button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.organization-filter button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.organization-filter button.active {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+    border-color: #8b5cf6;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.organization-filter button.active:hover {
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+}
+
+/* Couleurs spécifiques par organisation */
+.organization-filter button.active[data-org="UFC"] {
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    border-color: #d4af37;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.organization-filter button.active[data-org="Bellator"] {
+    background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
+    border-color: #1e90ff;
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
+}
+
+.organization-filter button.active[data-org="PFL"] {
+    background: linear-gradient(135deg, #e63946 0%, #ff6b6b 100%);
+    border-color: #e63946;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+}
+
+.organization-filter button.active[data-org="ONE"] {
+    background: linear-gradient(135deg, #ff8c00 0%, #ffa500 100%);
+    border-color: #ff8c00;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+}
+
+@media (max-width: 480px) {
+    .organization-filter {
+        gap: 8px;
+    }
+
+    .organization-filter button {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
