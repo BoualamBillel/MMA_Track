@@ -153,6 +153,7 @@
     color: #8a8aa3;
     font-size: 1.05rem;
     margin: 0;
+    padding-bottom: 1em;
     display: flex;
     align-items: center;
     gap: 10px;
