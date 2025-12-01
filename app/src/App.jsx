@@ -39,7 +39,7 @@ function App() {
       <main className="app-main">
         <div className="events-list">
           {events.length === 0 ? (
-            <p className="no-results">Aucun combat trouvé</p>
+            <p className="no-results">No matches found</p>
           ) : (
             events.map((event, index) => (
               <EventCard key={index} event={event} />
