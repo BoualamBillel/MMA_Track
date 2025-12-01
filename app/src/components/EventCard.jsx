@@ -20,7 +20,7 @@ function EventCard({ event }) {
                     rel="noopener noreferrer" 
                     className="event-link"
                 >
-                    Voir sur Tapology ↗
+                    View on Tapology ↗
                 </a>
             </div>
 
