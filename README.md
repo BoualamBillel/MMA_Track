@@ -48,12 +48,6 @@ app/
 	```bash
 	npm run dev
 	```
-4. Ouvrir [http://localhost:5173](http://localhost:5173) dans votre navigateur.
-
-## Personnalisation
-
-- Ajoutez vos propres événements dans `src/data/mockEvents.js`.
-- Modifiez les styles dans les fichiers CSS des composants.
 
 ## Auteur
 
