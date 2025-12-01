@@ -14,7 +14,7 @@ function FightCard({ fight }) {
                         <img src={fighterA.picture} alt={`${fighterA.name} picture`} />
                     </div>
                     <img src={fighterA.country} alt={`${fighterA.name} country flag`} className="fighter-flag" />
-                    <p className="fighter-name">{fighterA.name}</p>
+                    <a href={fighterA.link} target='blank'><p className="fighter-name">{fighterA.name}</p></a>
                     <p className="fighter-record">{fighterA.record}</p>
                 </div>
 
@@ -28,7 +28,7 @@ function FightCard({ fight }) {
                         <img src={fighterB.picture} alt={`${fighterB.name} picture`} />
                     </div>
                     <img src={fighterB.country} alt={`${fighterB.name} country flag`} className="fighter-flag" />
-                    <p className="fighter-name">{fighterB.name}</p>
+                    <a href={fighterB.link} target='blank'><p className="fighter-name">{fighterB.name}</p></a>
                     <p className="fighter-record">{fighterB.record}</p>
                 </div>
             </div>

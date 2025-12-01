@@ -1,0 +1,197 @@
+.event-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    background: linear-gradient(145deg, #0a0a14, #12121f);
+    border-radius: 16px;
+    border: 1px solid #2a2a4a;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-timer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #e63946, #ff6b6b, #e63946);
+    background-size: 200% 100%;
+    animation: timerGlow 2s linear infinite;
+}
+
+@keyframes timerGlow {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+/* Timer Unit (each box for days, hours, etc.) */
+.timer-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.timer-value {
+    position: relative;
+    background: linear-gradient(145deg, #1a1a2e, #0f0f1a);
+    border: 2px solid #e63946;
+    border-radius: 12px;
+    padding: 14px 18px;
+    min-width: 70px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.timer-value::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(230, 57, 70, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.timer-value:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(230, 57, 70, 0.4);
+    border-color: #ff6b6b;
+}
+
+.timer-number {
+    font-family: 'Courier New', monospace;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(230, 57, 70, 0.6),
+                 0 0 40px rgba(230, 57, 70, 0.3);
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.timer-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8a8aa3;
+}
+
+/* Separator between units */
+.timer-separator {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #e63946;
+    text-shadow: 0 0 15px rgba(230, 57, 70, 0.6);
+    animation: blink 1s ease-in-out infinite;
+    margin-top: -20px;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Live/Urgent state when less than 1 day */
+.event-timer.urgent .timer-value {
+    border-color: #ff6b6b;
+    animation: urgentPulse 1s ease-in-out infinite;
+}
+
+.event-timer.urgent .timer-number {
+    color: #ff6b6b;
+}
+
+@keyframes urgentPulse {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 35px rgba(255, 107, 107, 0.6);
+    }
+}
+
+/* Finished state */
+.event-timer.finished {
+    opacity: 0.6;
+}
+
+.event-timer.finished .timer-value {
+    border-color: #4a4a6a;
+}
+
+.event-timer.finished .timer-number {
+    color: #8a8aa3;
+    text-shadow: none;
+}
+
+.event-timer.finished .timer-separator {
+    color: #4a4a6a;
+    animation: none;
+}
+
+.event-timer.finished::before {
+    background: linear-gradient(90deg, #4a4a6a, #6a6a8a, #4a4a6a);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .event-timer {
+        gap: 8px;
+        padding: 14px 10px;
+    }
+
+    .timer-value {
+        padding: 10px 12px;
+        min-width: 55px;
+        border-radius: 10px;
+    }
+
+    .timer-number {
+        font-size: 1.6rem;
+    }
+
+    .timer-label {
+        font-size: 0.6rem;
+        letter-spacing: 1px;
+    }
+
+    .timer-separator {
+        font-size: 1.4rem;
+        margin-top: -14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .event-timer {
+        gap: 5px;
+        padding: 12px 8px;
+    }
+
+    .timer-value {
+        padding: 8px 10px;
+        min-width: 48px;
+    }
+
+    .timer-number {
+        font-size: 1.3rem;
+    }
+
+    .timer-separator {
+        font-size: 1.1rem;
+    }
+}

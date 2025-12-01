@@ -1,4 +1,6 @@
 import { useEvents } from './hooks/useEvents'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import EventCard from './components/EventCard'
 import SearchBar from './components/SearchBar'
 import FilterBar from './components/FilterBar'
@@ -10,7 +12,9 @@ function App() {
   if (loading) {
     return (
       <div className="app">
+        <Header />
         <div className="loading">Chargement des événements...</div>
+        <Footer />
       </div>
     );
   }
@@ -18,17 +22,16 @@ function App() {
   if (error) {
     return (
       <div className="app">
+        <Header />
         <div className="error">Erreur : {error}</div>
+        <Footer />
       </div>
     );
   }
 
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>MMA Track</h1>
-        <p>Suivez tous les prochains événements MMA</p>
-      </header>
+      <Header />
 
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <FilterBar selectedOrganizations={selectedOrganizations} toggleOrganization={toggleOrganization} />
@@ -44,6 +47,8 @@ function App() {
           )}
         </div>
       </main>
+
+      <Footer />
     </div>
   )
 }

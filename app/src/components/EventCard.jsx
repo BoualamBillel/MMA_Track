@@ -1,4 +1,5 @@
 import FightCard from "./FightCard";
+import EventTimer from "./EventTimer";
 import { getOrganizationFromTitle } from "../data/mockEvents";
 import './EventCard.css';
 
@@ -19,13 +20,14 @@ function EventCard({ event }) {
                     rel="noopener noreferrer" 
                     className="event-link"
                 >
-                    Voir sur Tapology ↗
+                    View on Tapology ↗
                 </a>
             </div>
 
             <div className="event-info">
                 <h2 className="event-title">{title}</h2>
                 <p className="event-date">{date}</p>
+                <EventTimer eventDate={date} />
             </div>
 
             <div className="fights-list">
