@@ -11,12 +11,6 @@ MMA Track est une application web moderne permettant de suivre les événements 
 - **Recherche rapide** : Trouvez un événement par nom ou date.
 - **Design responsive** : Interface moderne, sombre, adaptée mobile et desktop.
 
-## Aperçu
-
-![Aperçu de l’application - Accueil](public/preview.png)
-
-![Aperçu de l’application - Fightcard](public/preview2.png)
-
 ## Technologies utilisées
 
 - **React** (Vite)
